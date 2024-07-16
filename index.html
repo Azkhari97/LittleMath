@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Merupakan halaman situs untuk melatih hitungan matematika dasar" />
+    <title>Little Math</title>
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />-->
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    
+    <section id="home">
+      <div id="brand">
+      <h1>Little Math</h1>
+      <p>Berhitung dengan Menyenangkan</p>
+      </div>
+      <button onclick="play()">Mulai!</button>
+      <button onclick="setelan()">Pengaturan</button>
+    </section>
+    
+    <section id="pengaturan">
+     <h2>Pengaturan Permainan</h2>
+     <label for="jmlSoal">Tentukan Jumlah Soal</label>
+      <input id="jmlSoal" type="number" min="10" max="100" placeholder="(Maks. 100)" value="10" />
+     
+     <label for="jnsOpr">Pilih Operasi Matematika</label>
+     <select id="jnsOpr">
+       <option value="+">Penjumlahan</option>
+       <option value="*">Perkalian</option>
+       <option value="-" disabled>Pengurangan</option>
+       <option value="/" disabled>Pembagian</option>
+     </select>
+     
+     <label for="tingkat">Pilih Tingkat Kesulitan</label>
+     <select id="tingkat">
+       <option value="1">Mudah</option>
+       <option value="2">Sedang</option>
+       <option value="3">Susah</option>
+     </select>
+      
+      <div class="pengaturan">
+      <button id="tutup">Batal</button>
+      <button id="simpan">Simpan</button>
+      </div>
+      
+    </section>
+    
+    <section id="game">
+      <!--<div class="soal">
+        <span class="item">1</span>
+        <span class="item">1</span>
+        <span class="item">1</span>
+        <span class="item">1</span>
+      </div>-->
+    </section>
+    
+    <!--<section id="score"></section>-->
+    
+    <script src="scripts.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+  </body>
+</html>

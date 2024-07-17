@@ -159,11 +159,19 @@ input, select {
 
 .item {
   text-align: center;
-  width: calc(100% / 4);
+  width: calc(100% / 5);
   color: var(--teks);
-  padding: 2% 0;
-  
+  aspect-ratio: 2/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
+}
+
+@media screen and (min-width: 720px){
+  .item {
+    aspect-ratio: 5/1;
+  }
 }
 
 .item > input {
@@ -171,7 +179,7 @@ input, select {
   padding: initial;
   margin: unset;
   border-radius: 0;
-  height: 100%;
+  height: 90%;
   background: var(--latar);
   color: var(--teks);
   text-align: center;

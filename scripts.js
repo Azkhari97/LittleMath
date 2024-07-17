@@ -42,7 +42,7 @@ function randomMath([x, quest, operator, oper]){
       }
       tmp = tmp.join("");
       let ubah = eval(tmp);
-      tmp = tmp.split("");
+      tmp = tmp.split("+");
       let arr = [ubah, '-', tmp[0]];
       tmp = [];
       tmp = arr;
@@ -51,7 +51,7 @@ function randomMath([x, quest, operator, oper]){
       tmp = generatePembagian(x, operand)
       tmp = tmp.join("");
       let ubah = eval(tmp);
-      tmp = tmp.split("");
+      tmp = tmp.split("*");
       let arr = [ubah, '/', tmp[0]];
       tmp = [];
       tmp = arr;

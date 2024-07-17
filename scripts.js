@@ -119,7 +119,9 @@ function generateGame(){
   `;
   }
   
-  tmp += `<span class="item"><input type="number" onchange="cekJwb(this)" /></span>
+  tmp += `
+  <span class="item">=</span>
+  <span class="item"><input type="number" onchange="cekJwb(this)" /></span>
   `;
     
   //console.log(i.join(''))
@@ -213,4 +215,4 @@ function submit(){
   
 }
 
-pesan("Selamat Datang di Little Math!");
+pesan("Selamat Datang di Little Math!")

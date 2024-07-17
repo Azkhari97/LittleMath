@@ -265,3 +265,6 @@ function submit(){
 }
 
 pesan("Selamat Datang di Little Math!");
+document.addEventListener("contextmenu",(e)=>{
+  e.preventDefault()
+} )

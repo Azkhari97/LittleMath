@@ -31,15 +31,43 @@ function randomMath([x, quest, operator, oper]){
     
     let tmp = []
     
-    for(let s = 0; s < operand; s++){
-      if(s%2 == 1 && s > 0){
-        tmp[s] = `${operator}`;
+    if(operator === "-"){
+      for(let s = 0; s < operand; s++){
+        if(s%2 == 1 && s > 0){
+          tmp[s] = `+` //`${operator}`;
+        }
+        else {
+          tmp[s] = createDigit(x);
+        }
       }
-      else {
-        tmp[s] = createDigit(x);
-      }
-    
+      tmp = tmp.join("");
+      let ubah = eval(tmp);
+      tmp = tmp.split("");
+      let arr = [ubah, '-', tmp[0]];
+      tmp = [];
+      tmp = arr;
     }
+    else if(operator === "/"){
+      tmp = generatePembagian(x, operand)
+      tmp = tmp.join("");
+      let ubah = eval(tmp);
+      tmp = tmp.split("");
+      let arr = [ubah, '/', tmp[0]];
+      tmp = [];
+      tmp = arr;
+      
+    }
+    else{
+      for(let s = 0; s < operand; s++){
+        if(s%2 == 1 && s > 0){
+          tmp[s] = `${operator}`;
+        }
+        else {
+          tmp[s] = createDigit(x);
+        }
+      }
+    }
+    
     
     //console.dir(tmp)
     cek[n] = tmp
@@ -47,6 +75,7 @@ function randomMath([x, quest, operator, oper]){
   
   console.dir(cek)
 }
+
 
 function createDigit(x){
   let number = [0,1,2,3,4,5,6,7,8,9];
@@ -58,6 +87,26 @@ function createDigit(x){
   return tmp;
 }
 
+function generatePembagian(x,operand){
+  
+let tmp = []
+  for(let s = 0; s < operand; s++){
+        if(s%2 == 1 && s > 0){
+          tmp[s] = `*`//`${operator}`;
+        }
+        else {
+          tmp[s] = createDigit(x);
+        }
+      }
+   console.log(tmp.join(''));
+   console.log(tmp.join('').includes("0"));
+   if(tmp.join('').includes('0')){
+    return generatePembagian(x,operand);
+   }
+   else {
+     return tmp;
+   }
+}
 //let dummy = [1,10,"+",2]
 ///randomMath(dummy)
 
@@ -215,4 +264,4 @@ function submit(){
   
 }
 
-pesan("Selamat Datang di Little Math!")
+pesan("Selamat Datang di Little Math!");

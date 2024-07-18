@@ -79,9 +79,14 @@ function randomMath([x, quest, operator, oper]){
 
 function createDigit(x){
   let number = [0,1,2,3,4,5,6,7,8,9];
+  let number1 = [1,2,3,4,5,6,7,8,9];
   let tmp = ""
   for(let i = 0; i < x; ++i){
+     if(i == 0 && x > 1){
+      tmp += `${number1[Math.floor(Math.random()*number1.length)]}`
+     }else{
       tmp += `${number[Math.floor(Math.random()*number.length)]}`
+     }
   }
   
   return tmp;
@@ -96,11 +101,12 @@ let tmp = []
         }
         else {
           tmp[s] = createDigit(x);
+          
         }
       }
    console.log(tmp.join(''));
    console.log(tmp.join('').includes("0"));
-   if(tmp.join('').includes('0')){
+   if(tmp.join('').includes('0') && parseInt(x) == 1){
     return generatePembagian(x,operand);
    }
    else {
@@ -164,7 +170,7 @@ function generateGame(){
   let tmp = ``;
   for(let n = 0; n < i.length; ++n){
   tmp += `
-      <span class="item">${i[n]}</span>
+      <span class="item">${i[n] == '*' ? 'x' : (i[n] == '/' ? ':' : i[n])}</span>
   `;
   }
   
@@ -265,6 +271,7 @@ function submit(){
 }
 
 pesan("Selamat Datang di Little Math!");
+
 document.addEventListener("contextmenu",(e)=>{
   e.preventDefault()
 } )
